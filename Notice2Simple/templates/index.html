@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notice2Simple</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="/" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div>
+                <span class="logo-main">
+                    Notice<span class="purple">2</span>Simple
+                </span>
+
+                <span class="logo-sub">
+                    AI Notice Assistant
+                </span>
+            </div>
+        </a>
+
+        <div class="nav-badge">
+            <span class="status-dot"></span>
+            AI Powered
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-badge">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Built for students
+            </div>
+            <h1>
+                Stop reading.
+                <br>
+                <span>Start understanding.</span>
+            </h1>
+            <p class="hero-description">
+                Turn confusing college, scholarship and exam notices
+                into simple, clear actions with AI.
+            </p>
+            <div class="hero-features">
+                <div>
+                    <i class="fa-solid fa-bolt"></i>
+                    Instant
+                </div>
+                <div>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Student Friendly
+                </div>
+                <div>
+                    <i class="fa-solid fa-robot"></i>
+                    AI Powered
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MAIN INPUT CARD -->
+        <section class="main-card">
+            <div class="card-header">
+                <div class="document-icon">
+                    <i class="fa-regular fa-file-lines"></i>
+                </div>
+                <div>
+                    <h2>
+                        Paste your notice
+                    </h2>
+
+                    <p>
+                        Let AI find the important information for you.
+                    </p>
+                </div>
+            </div>
+
+            <form method="POST">
+                <div class="textarea-wrapper">
+                    <textarea name="notice"
+                        placeholder="Paste your college, scholarship, exam or other official notice here..."
+                        required></textarea>
+                    <div class="textarea-bottom">
+                        <span>
+                            <i class="fa-solid fa-lock"></i>
+                            Your notice is processed securely
+                        </span>
+                        <span class="ai-label">
+                            AI
+                        </span>
+                    </div>
+                </div>
+
+                <button type="submit" class="ai-button">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>
+                        Simplify With AI
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right arrow"></i>
+
+                </button>
+            </form>
+
+            {% if error %}
+            <div class="error-message">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <strong>
+                        Something went wrong
+                    </strong>
+                    <p>
+                        {{ error }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- AI RESULT -->
+        {% if result %}
+        <section class="result-section">
+            <div class="result-title">
+                <div class="result-badge">
+                    <span class="pulse"></span>
+                    AI Analysis Complete
+                </div>
+                <h2>
+                    Here's what you need to know
+                </h2>
+                <p>
+                    We turned your notice into simple,
+                    actionable information.
+                </p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-top">
+                    <div class="ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <strong>
+                            Notice2Simple AI
+                        </strong>
+                        <span>
+                            Just now
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-content">{{ result }}</div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- HOW IT WORKS -->
+        <section class="how-section">
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+            <h2>
+                Three steps. Zero confusion.
+            </h2>
+            <p class="section-description">
+                Notice2Simple turns complicated information
+                into something you can actually understand.
+            </p>
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-icon">
+                        <i class="fa-regular fa-clipboard"></i>
+                    </div>
+
+                    <h3>
+                        Paste
+                    </h3>
+                    <p>
+                        Copy any official notice and paste it
+                        into the box.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">
+                        02
+                    </div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>
+                        AI Reads
+                    </h3>
+                    <p>
+                        Gemini identifies deadlines, eligibility,
+                        documents and important details.
+                    </p>
+                </diV>
+
+                <div class="step-card">
+                    <div class="step-number">
+                        03
+                    </div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3>
+                        Take Action
+                    </h3>
+                    <p>
+                        Get a simple explanation and clear
+                        next steps.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-regular fa-lightbulb"></i>
+                </div>
+
+                <div>
+                    <h3>
+                        Built for real student problems
+                    </h3>
+
+                    <p>
+                        Important opportunities are often hidden
+                        inside long, complicated notices.
+                        Notice2Simple makes those opportunities
+                        easier to understand and act on.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            Notice<span>2</span>Simple
+        </div>
+        <p>
+            Turning confusing notices into clear actions.
+        </p>
+        <div class="footer-line"></div>
+        <span class="footer-small">
+            Built with Python, Flask & Gemini AI
+        </span>
+    </footer>
+
+</body>
+</html>
